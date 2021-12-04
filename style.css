@@ -61,12 +61,24 @@ main .form input{
   background-color: #242A36;
 }
 
+main .form input[type=text]:focus{
+  outline: 2px solid #A873F7;  
+}
+
+main .form input[type=email]:focus{
+  outline: 2px solid #A873F7;  
+}
+
+main .form input[type=password]:focus{
+  outline: 2px solid #A873F7;  
+}
+
 main .form p{
   margin-right: 200px;
   color: white;
 }
 
-main .form button{
+main .form .button{
   margin-top: 10px;
   width: 200px;
   height: 40px;
