@@ -13,7 +13,7 @@
 
 <body>
   <main>
-    <div class="form">
+    <form class="form" method="post">
       <h1>Crie a sua conta!</h1>
       <div class="icons">
         <img class="google" src="./images/icons/google.png" alt="">
@@ -25,17 +25,18 @@
       </div>
       <span>Ou</span>
       <p>Nome</p>
-      <input type="text" mame="nome" autofocus><br>
-      <p>Email</p>
-      <input type="email" name="email" autofocus><br>
+      <input id="name" type="text" mame="nome" autofocus required><br>
+      <p>E-mail</p>
+      <input id="email" type="email" name="email" autofocus required><br>
       <p>Senha</p>
-      <input type="password" name="senha" autofocus><br>
-      <button class="button" type="submit" onclick="createUser()">Criar conta</button>
-    </div>
+      <input id="password" type="password" name="senha" autofocus required><br>
+      <button type="submit" class="button" onclick="signUp()">Criar conta</button>
+    </form>
     <div class="main-content">
       <img src="./images/undraw_digital_nomad_re_w8uy.svg" alt="">
     </div>
   </main>
 </body>
+<script src="./api.js"></script>
 
 </html>
