@@ -19,9 +19,20 @@ main .form{
   border-radius: 10px;
 }
 
+main .form .icons{
+  /* background-color: #242A36; */
+  width: 160px;
+  border-radius: 40px;
+  padding: 0px;
+  margin-left: 118px;
+  margin-bottom: 5px;
+}
+
 main .form .icons img{
-  padding: 5px;
+  padding: 2px;
+  margin-top: 5px;
   cursor: pointer;
+  /* background-color: #242A36; */
 }
 
 main .form .icons .google{
@@ -61,7 +72,10 @@ main .form input{
   background-color: #242A36;
 }
 
-main .form .input
+main .form input:hover{
+  padding: 5px;
+  transition: 0.5s;
+}
 
 main .form input[type=text]:focus{
   outline: 2px solid #A873F7;  
