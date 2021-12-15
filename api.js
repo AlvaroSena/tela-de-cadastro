@@ -4,9 +4,8 @@ async function signUp() {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   }
-  console.log(user);
 
-  const result = await fetch('http://localhost:5555/users', {
+  const result = await fetch('http://localhost:5555/api/users', {
     method: "POST",
     body: JSON.stringify(user),
     headers: { "Content-type": "application/json; charset=UTF-8" }
