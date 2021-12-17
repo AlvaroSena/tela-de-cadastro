@@ -108,7 +108,8 @@ main .form .button{
 }
 
 main .form .button:hover{
-  background-color: blueviolet;
+  background-color: #091017;
+  outline: 1px solid #A873F7;
   transition: 0.5s;
 }
 
