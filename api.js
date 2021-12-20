@@ -1,3 +1,12 @@
+async function getUsers() {
+  const url = await fetch('http://localhost:5555/users');
+
+  const response = await url.json();
+  console.log(response);
+}
+
+getUsers();
+
 async function signUp() {
   const user = {
     username: document.getElementById("name").value,
@@ -5,13 +14,13 @@ async function signUp() {
     password: document.getElementById("password").value,
   }
 
-  const form = await fetch('http://localhost:5555/users', {
+  const url = await fetch('http://localhost:5555/users', {
     method: "POST",
     body: JSON.stringify(user),
     headers: { "Content-type": "application/json; charset=UTF-8" }
   });
 
-  const response = await form.json();
+  const response = await url.json();
 }
 
 async function signIn() {
@@ -20,17 +29,35 @@ async function signIn() {
     password: document.getElementById("password").value,
   }
 
-  const form = await fetch('http://localhost:5555/users/auth', {
+  const url = await fetch('http://localhost:5555/users/auth', {
     method: "POST",
     body: JSON.stringify(user),
     headers: {
-      "Content-type": "application/json; charset=UTF-8",
-      // Authorization: `token ${token}`
+      "Content-type": "application/json; charset=UTF-8"
     },
   });
 
-  const response = await form.json();
+  const response = await url.json();
   const { token } = response;
   localStorage.setItem('token', token);
-  // console.log(response);
+}
+
+async function updateUsername() {
+  const user = {
+    username: document.getElementById("name").value,
+  }
+
+  const authToken = localStorage.getItem(token);
+
+  const url = await fetch('http://localhost:5555/users', {
+    method: "PATCH",
+    body: JSON.stringify(user),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization: `token ${authToken}`
+    },
+  });
+
+  const response = await url.json();
+  console.log(response);
 }

@@ -9,7 +9,7 @@
 
 main .form{
   text-align: center;
-  margin-top: 70px;
+  margin-top: 40px;
   margin-right: 200px;
   float: left;
   margin-left: 75px;
@@ -108,7 +108,8 @@ main .form .button{
 }
 
 main .form .button:hover{
-  background-color: blueviolet;
+  background-color: #091017;
+  outline: 1px solid #A873F7;
   transition: 0.5s;
 }
 
@@ -122,4 +123,21 @@ main .main-content img{
   float: left;
   margin-left: 100px;
   margin-top: 80px;
+}
+
+main .social-icons {
+  margin-top: 50px;
+}
+
+main .social-icons a i {
+  padding: 5px;
+  font-size: 20px;
+  color: #242A36;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+main .social-icons a i:hover {
+  color: #777777;
+  transition: 0.5s;
 }
