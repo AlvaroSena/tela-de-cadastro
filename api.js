@@ -4,13 +4,33 @@ async function signUp() {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   }
-  console.log(user);
 
-  const result = await fetch('http://localhost:5555/users', {
+  const form = await fetch('http://localhost:5555/users', {
     method: "POST",
     body: JSON.stringify(user),
     headers: { "Content-type": "application/json; charset=UTF-8" }
-  })
+  });
 
-  const response = await result.json();
+  const response = await form.json();
+}
+
+async function signIn() {
+  const user = {
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value,
+  }
+
+  const form = await fetch('http://localhost:5555/users/auth', {
+    method: "POST",
+    body: JSON.stringify(user),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      // Authorization: `token ${token}`
+    },
+  });
+
+  const response = await form.json();
+  const { token } = response;
+  localStorage.setItem('token', token);
+  // console.log(response);
 }
